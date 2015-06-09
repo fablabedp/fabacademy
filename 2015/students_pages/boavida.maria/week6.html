@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>final project</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+ 
+<div class="navbar navbar-default">
+  <div class="container">
+    <a class="navbar-brand" <a href="index.html">maria boavida</a></a>
+    <ul class="nav navbar-nav">
+<!--       <li class="active"><a href="#">home</a></li>
+ -->
+       <li><a href="index.html">assignments</a></li>
+      <li><a href="about.html">about</a></li>
+      <li class="divider-vertical"></li>
+   <!--    <li><a href="#">More</a></li>
+      <li><a href="#">Options</a></li> -->
+    </ul>
+  </div>
+</div>
+
+
+<!-- <div class="image">
+
+  <img src="images/noise.jpg" width="500">
+ -->
+<!--    <div class="jumbotron"> -->
+   <!--  <h3>This is going to be awesome!</h3>    -->
+
+    <!--  <p class="lead">The Bootstrap 3 grid is fluid only. This example shows how to use a custom container to create a fixed width layout.</p> -->
+    
+    <!-- <p><a class="btn btn-large btn-success" href="http://bootply.com/tagged/bootstrap-3" target="ext">More Examples</a></p> -->
+
+
+  <div class="container"> 
+
+  
+       <h3>week 6: electronics design</h3>
+      
+
+
+<h2><b>Leds & Buttons</b></h2>
+<br></br>
+
+  <div class="container"> 
+
+
+<p>This week, our task was to redraw and produce the echo hello-world circuit board, adding a button and a LED to it. Knowing little about electronics and having never used Eagle before, I was bracing myself for a long circuit design nightmare.</p>
+
+<p>To get a gist of the software, I started by watching this <a href="https://www.youtube.com/watch?v=R4DYztYB6d4">video tutorial.
+ </a>  </p>
+
+<p>And then I watched <a href="https://www.youtube.com/watch?v=R4DYztYB6d4">this one </a> to better understand how the schematic design works.</p>
+
+<p>During the whole board design process, I kept checking <a href="http://academy.cba.mit.edu/2012/labs/providence/tutorials/07.html">providence tutorials</a>, they proved quite useful.</p>
+
+<p>I downloaded the fab library and picked out the components to place on the schematic board. Then I routed the components and adjusted the components' positions on the layout board.</p>
+
+<p>Once everything seemed to be in the right place, I checked Eagle's Design Rules (under DRC in the Tools Menu), to see if there were any warnings or errors. And helas, there were quite a few overlaps and improperly connected routes. It took a little more editing before my board was compliant with the rules, but I finally succeeded.</p> 
+
+<p>Here are the schematic and layout views of the board:</p> 
+
+<img src="images/eagle_process.jpg">
+<br></br>
+
+<p>I then exported the board layout as a .png, and edited in Gimp to add the outline traces. I also exported an image of the pads alone, so I could use it as a stencil to evenly apply soldering paste on the board.</p>
+
+<img src="images/eagle_boards.jpg">
+<br></br>
+
+<p><b>PCB AND STENCIL MAKING</p></b>
+
+I uploaded my circuit's .png image into the fabmodules, so I could cut out my copper board in the Modela. I followed the same steps from the <a href="week4.html" alt=>Electronics Production week </a>and the process was fast and painless. </p>
+
+<img src="images/milling_pcb.jpg">
+<br></br>
+
+This is how the PCB looked after being milled. I noticed at this point that the pads for one of my 10k resistors were much smaller than all the other ones. I imagine I must have accidently used the wrong library on Eagle when I selected it. Fingers crossed, I would be able to solder my component on the mini pads without a problem.
+
+<img src="images/milled_pcb.jpg">
+<br></br>
+
+<p>After cleaning up the board (soap, water, steelwool), I noticed the mill bit had "eaten" quite a deep path between my traces. This is not ideal when you are using stencils -- you want you surface to be as flat and even as possible, so that the solder paste doesn't bleed underneath. </p>
+
+<p>Cutting out the board's pads in the Roland vinyl cutter was a very simple operation: I turned my Eagle image into a vector in Inkscape (you can even do the tracing directly in CUTSTUDIO, the not-so-great-software that comes with the machine), took a small leftover piece of vinyl and the machine took care of the rest in just a couple of minutes.</p>
+
+<p>This is how the vinyl mask looked, after being glued on to the circuit board</p>
+
+<img src="images/solder_paste.jpg">
+<br></br>
+
+<p><b>SOLDERING PASTE</p></b>
+
+<p>I then started applying the solder paste onto the mask. I'm not convinced I chose the most effective method to spread it out evenly among the pads; instead of applying bits and pieces directly on the holes, I think it works best if one applies a thick line of paste on of the the board's edges and then spreads it back and forth until all the pad holes are filled. </p> 
+
+<p>Here's a closer look at the process:</p>
+
+<img src="images/pasting_board.jpg">
+
+<br></br>
+
+<p>As I removed the mask, most of the solder paste was right on the pads; but the smaller  Attiny44 pads were somewhat flooded in paste, so I cleaned up the paths between them with an exacto knife and a needle. </p>
+
+<p>ADDING THE COMPONENTS</p>
+
+<p>Once the excess solder paste was removed, it was time to lay out the components on the pasted pads. I started by printing out a big-sized image of my board layout; this was to serve as a "bingo board" on which I could place the components, as I was picking them out of the fabinventory. This helped me keep track of all the micro parts. </p>
+
+<img src="images/components_sheet.jpg">
+<br></br>
+
+<p>Once all the components were on the board, I was ready for the heat gun! </p>
+
+<img src="images/components_on_paste.jpg">
+<br></br>
+
+<p>Working the heatgun (set to 340ºC) slolwly around the board and watchin the solder paste turn into a nice shinny metal was actually quite entertaining. I pointed the gun diretly at the individual pads I was looking to solder (at a distance of about 2-5cms) and kept making sure I was not overheating the cirtcuit -- and risk frying some of the components.</p>
+
+<img src="images/heating_paste.jpg">
+
+<br></br>
+
+<p>This is how the board looked after going through the heating process:</p>
+
+
+<img src="images/soldered_board.jpg">
+
+<br></br>
+
+<p><b>CONNECTING THE CIRCUIT</p></b>
+
+<p>After checking all the connections on the board with the voltmeter, I connected it to the ISP and to the FTDI cable. To make sure the connecting cables were all in the "right position", I used the voltmeter to look for the ground pins on both the Attiny and the FTDI header and this helped me align them.</p>
+       
+
+    <img src="images/finding_ground.jpg">
+      
+      
+<p>This is the look of the helloecho board, once connected to the ISP and the FTDI cable.</p>
+
+      <img src="images/helloecho_finalboard.jpg">
+<br></br>
+
+<p>I didn't have enough time to start programming my board this week, so I'm still waiting to say hello to the world...</p>
+   
+
+<p>Here are the board's Eagle files:</p>
+
+
+ <a href="files/helloecho_finalboard.zip">hello echo board 
+ </a>
+<p></p>
+<br>
+
+
+</div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+      
+      <!-- h4>Powerful Grid</h4>
+      <p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
+    </div>
+    
+    <div class="col-lg-6">
+      <h4>New Elements</h4>
+      <p>New panels, list groups, glyphicons and justified navigation.</p>
+      
+      <h4>Less Bloat</h4>
+      <p>The optimized CSS is in a single file. Glyphicons are now separate.</p>
+    </div> -->
+  <!-- </div>
+
+    </div>
+  
+  <hr> -->
+  
+  <!-- <div class="jumbotron text-center">
+    <h2>Moving from Bootstrap 2.x to 3.0?</h2>
+    <p class="lead">Everything has changed, so you can't just replace the 2.x with the 3.0 files. The folks at Bootply, the Bootstrap Playground have created a migration guide to help.</p>
+    <p><a class="btn btn-large btn-success" href="http://www.bootply.com/bootstrap-3-migration-guide" target="ext">Migration Guide</a></p>
+  </div> -->
+  
+ <!-- /container -->
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

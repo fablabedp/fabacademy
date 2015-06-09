@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://getbootstrap.com/examples/blog/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Miro Luis" content="Week 4">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>Week 4</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/miro.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div class="container"> 
+            <ul class="nav nav-pills nav-stacked navbar-left">
+                <li role="presentation" ><a href="index.html">Home</a></li>
+                <li role="presentation" class="active"><a href="./weeklyassignments.html">Assignments</a></li>
+                <li role="presentation" ><a href="./about.html">About me</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Electronics production</h1>
+                <p class="lead blog-description">Make it, produce it, solder it</p>
+                <hr>
+                <h2 class="blog-post-title">Build a FABISP</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div class="blog-post">
+<p>Learn by doing, doing mistakes, listen Neil, do it again, happy at the end. ;)</p>
+                        <h2 class="blog-post-title">FABISP in the not so good way</h2>    
+                        <p></p>
+                        
+                        This week i was invited to build an FABISP, a simple board that was very useful to program AVR microcontroller's from Atmel.
+                        
+                        <img src="./images/week4/fabispPQ.jpg" alt="FABISP" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">FABISP</p>
+                        <p></p>
+                        Electronics is my thing, but...
+                        <p></p>
+                        I never produce a board like this, i always use electronic specific software like eagle, and i make my boards or by etching process or by ordering it from board houses.
+                        
+                        <p></p>
+                        So the big challenge is how a png image, can be a physical board.
+                        First i use fabmodules to vectorize it.
+                        <p></p>
+                        Than i try to import that svg to my SRM20 software.
+                        
+                        
+                        <img src="./images/week4/rollandSRM20.png" alt="SRM20" height="auto" width="auto" class="center-block">
+                        <p class="text-center">Rolland SRM20</p>
+                        
+                        
+                        <p></p>
+                        Ok first the SRM20 adventure ;)
+                        <p></p>
+                        My SRM20 have a lower bed so i must put some high to make the pcb reachable by the milling cutter.<p></p>
+                        I pick some wood, glue tape it to the bed.<p></p>
+                        After that i use the click mill software from the SRM20 to make it completely flat. <p></p>
+                        With a 3mm milling cutter i made a flat surface where i gonna put my pcb.<p></p>
+                        
+                        
+                        <img src="./images/week4/levelling.png" alt="SRM20" height="auto" width="auto" class="center-block">
+                        <p class="text-center">Leveling the bed</p>
+                        
+                        
+                        Well the first mistake was done ;) 
+                        i use wood to be the bed, but i don't recommend it, because wood is random fiber material not so good or stable over time.
+                        <p></p>
+                        In Fablab Penela where i test it i don't have FR2 so i use a board from bakelite.
+                        Error 2, FR2  have a much much better behavior.
+                        <p></p>
+                        Error number 3
+                        I chose the wrong collet. My milling cutter's are 3mm Shaft, but my collet are 1/8" or 3,175mm
+                        So i must use a conic milling cutter.
+                        <p></p>
+                        <hr>
+                        <p></p>
+                        
+                        
+                        But... 
+                        My pcb work's ok, some off...
+                        
+                        <img src="./images/week4/firstICSP.png" alt="SRM20" height="auto" width="620" class="center-block">
+                        <p class="text-center">My first milled pcb</p>
+                        
+                                        <h2 class="blog-post-title">Build a FABISP 2.0</h2>
+                    
+                        Well well well
+                        <p> </p>
+                        Now with the help of fabMaster's in Fablab EDP i build a fabisp.
+                        <p></p>
+                        <img src="./images/week4/PNL_isp.png" alt="SRM20" height="auto" width="620" class="center-block">
+                        I name it fabispPenela, in gimp change the logo.
+                        <p></p>
+                        <img src="https://lh6.googleusercontent.com/-MOcBNZk3eMU/VOy6B3_GcjI/AAAAAAAAh7U/frrmEAsG5Is/w761-h571-no/IMG_20150224_175038.jpg" alt="SRM20" height="auto" width="620" class="center-block">
+                        I mill it in MDX20. <p></p>
+                        Everything easy and smooth.<p></p>
+                        The challenge begin's in soldering it. <p></p>
+                        We at fablab try to adopt a new approach.<p></p>
+                        We are trying to solder all the component's via hot air. <p></p>
+                        So for this i use gimp to make a solder paste mask.<p></p>
+                        <img src="./images/week4/PNL_isp_mask.png" alt="SRM20" height="auto" width="620" class="center-block">
+                        
+                    like this.<p></p>
+                        <img src="https://lh4.googleusercontent.com/-4IpLerh8i0U/VOy-1avg94I/AAAAAAAAh8A/-k9VSR1kJCQ/w761-h571-no/IMG_20150224_181049.jpg" alt="SRM20" height="auto" width="620" class="center-block">
+                        
+                        After that i apply it in pcb
+                        <img src="https://lh6.googleusercontent.com/-MnrEsLIOyM4/VOzJratwqwI/AAAAAAAAh84/Ph_9uxJfLT8/w761-h571-no/IMG_20150224_185627.jpg" alt="SRM20" height="auto" width="620" class="center-block">
+                        than i pass the solder paste<p></p>
+                        <img src="https://lh6.googleusercontent.com/-5qtExr7C1Mo/VOzTo_jUhoI/AAAAAAAAh_4/jtXn2W1ehyQ/w761-h571-no/IMG_20150224_193928.jpg" alt="SRM20" height="auto" width="620" class="center-block">
+                        populate the board with the component's
+                        <img src="https://lh4.googleusercontent.com/-6EEdmAsmSGQ/VOzUHg9HmuI/AAAAAAAAh-g/S24Gs0H7y5A/w428-h571-no/IMG_20150224_194122.jpg" alt="SRM20" height="auto" width="620" class="center-block">
+                        and applied the hot air to it. 
+                        <img src="https://lh5.googleusercontent.com/RBHqu4hU1cW3ZjycMvh4vzF_v3r93AzC1ej0rcm8ynul=w864-h519-no" alt="SRM20" height="auto" width="620" class="center-block">
+                        And voilá the board was ready :)<p></p>
+                        Double check the connections and it was in did great.
+                        <p></p>
+                        Tip's and trick's i use an android app as microscope. 
+                        <p></p>
+                        
+                        <a href="https://play.google.com/store/apps/details?id=it.softwares.atools">aTools</a>
+                        
+                        
+                        
+                        
+
+                        <p></p>
+                        <p></p>
+
+<!--
+                        
+
+                        <img src="./images/SketchTrashRhino.png" alt="Sketch of the Trash Tracker made in Rhino" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">Sketch of the Trash Tracker made in Rhino</p>
+                        <p></p>
+
+                        <img src="./images/TrashRhinoRendered.png" alt="First Rendered of the Trash Tracker made in Rhino" height="auto" width="620"   class="pull-left  ">
+                        <p class="text-center">First Rendered of the Trash Tracker made in Rhino</p>
+                        <p></p>
+                        <h2 class="blog-post-title">Antimony</h2>        
+                        <p></p>
+                        When i have tried use antimony in my mac, it not work, breack and close, i'm trying to use it in virtual XP. 
+                        
+-->
+                        <hr>
+                        Here is the <a href="https://www.dropbox.com/sh/0x0l0p0epb96ufd/AADIhJ3xkJ_WNXlSS-Whp1B9a?dl=0">link</a> to this week files. :)
+
+                        
+                    </div>
+                </div>          <!-- div class col sm 8 -->
+                <div class="col-sm-4  blog-sidebar">
+                    <!-- col-sm-offset-1 -->
+                    <div class="sidebar-module ">
+                        <!-- sidebar-module-inset -->
+                        <div  class="media">
+                            <a href="https://plus.google.com/photos/116858267463697494571/albums/6119728814254369473?authkey=CIv08fmB4I-Tew"><img src="https://lh5.googleusercontent.com/RBHqu4hU1cW3ZjycMvh4vzF_v3r93AzC1ej0rcm8ynul=w864-h519-no" alt="Final PCB" height="auto" width="310" class="pull-left  ">
+                            <p class="text-center">Final PCB :)</p>
+                            <p></p>
+                            <p></p>
+                            <a href="https://plus.google.com/photos/116858267463697494571/albums/6119728814254369473?authkey=CIv08fmB4I-Tew">link</a>
+                            <p class="text-center">Link to the all photos of this week</p>
+                            <p></p>
+<!--
+                            <img src="./images/concepPQ.png" alt="Sketch of the Trash Tracker aplication made in Windows Paint and Wacom HD13" height="auto" width="310" class="pull-left  ">
+                            <p class="text-center">Sketch of the Trash Tracker aplication made in Windows Paint and Wacom HD13</p>
+                            <p></p>
+-->
+<!--
+                            <img src="./images/TrashTrackerInk.png" alt="Sketch of the Trash Tracker made in inkScape" height="auto" width="310" class="pull-left  ">
+                            <p class="text-center">Sketch of the Trash Tracker made in inkScape</p>
+-->
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+    <footer class="blog-footer">
+        <p>Miroluis at <a href="http://www.fablabedp.edp.pt/">FabLabEdp</a></p>
+        <p>
+            <a href="./week4.html">Back to top</a>
+        </p>
+    </footer>
+
+    </div></body></html>

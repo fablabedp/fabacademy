@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>final project</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+ 
+<div class="navbar navbar-default">
+  <div class="container">
+    <a class="navbar-brand" <a href="index.html">maria boavida</a></a>
+    <ul class="nav navbar-nav">
+<!--       <li class="active"><a href="#">home</a></li>
+ -->
+       <li><a href="index.html">assignments</a></li>
+      <li><a href="about.html">about</a></li>
+      <li class="divider-vertical"></li>
+   <!--    <li><a href="#">More</a></li>
+      <li><a href="#">Options</a></li> -->
+    </ul>
+  </div>
+</div>
+
+
+<div class="container"> 
+
+  
+    <div class="col-lg-6">
+       <h3>week 14: interface and application programming  </h3>
+      
+
+<h2><b>sonar magic</b></h2>
+<br></br>
+
+  <div class="container"> 
+
+  
+ <p>This week, the assignment was to write an application that interfaces with an input &/or output device. </p>
+
+
+ <p>I chose to take the sonar sensor I made for input week and use <a href="http://www.processing.org">Processing</a> to make an interface for it.
+
+ <img src="images/sonar_setup.jpg">
+ <br></br> 
+
+  <p>I used <a href="http://www.instructables.com/id/Simple-Arduino-and-HC-SR04-Example/?ALLSTEPS">this instructable</a> as an example: </p>
+
+ <p>Since I had not managed to successfully finish programming part, I first had to get that out of the way. The ISP pins on my TXRX circuit were a bit damaged and I couldnt' get constant. So I decided to unsolder the ISP header and put jumpers on every pin (I din't have more headers on me at the time). </p> 
+
+<img src="images/txrx_board.png">
+ <br></br> 
+
+ <p>I carefully connected the ISP to the TXRX board and tried programming it with avrdude. On my first try, I got this: </p>
+
+<img src="images/program_fail1.jpg">
+ <br></br> 
+
+<p>I re-connected the ISP to the TXRX with even more care (pressing the jumpers a bit  as I sent the code, to ensure there was contact with all pads) and tried again. No luck.</p>
+
+<p>I tried unplugging the sonar sensor from the TXRX, before programming it. And this time, the avrdude was able to do his job:</p>
+
+<img src="images/program_success1.jpg">
+ <br></br> 
+
+<p><b>BURNING THE BOOTLOADER</p></b>
+
+<p>My circuit was now programmed and yet I was unable compile my arduino sonar sketch, so I decided to try burning the bootloader on the Arduino IDE, and then try compiling the sketch again. Burning the bootloader was not working either, until I realized I should unplug my sonar sensor, before compiling the sketch. This time, it worked just fine.</p>
+
+ <img src="images/burn_bootloader.png">
+ <br></br> 
+
+<p> But suddenly at this point, the TXRX board fell on the floor and got seriously hurt. Since I couldn't mill my PCB again on time for this assignment, I decided to just plug the sonar to an arduino and move on with the Processing part.</p> 
+
+ 
+  <p><b>PROCESSING</p></b>
+
+
+ <p>I used Processing for the interface part of my project. </p>
+
+
+ <p> I started by watching quite a few Processing tutorials by the Plethora Project and those were quite helpful:  </p>
+
+<a href="http://www.plethora-project.com/2011/09/12/processing-tutorials/">Plethora project -- Processing tutorials</a> <p>
+
+
+<p>Here is a useful  <a href="https://processing.org/reference/">list of all the main commands in Processing</a> <p>
+
+<p>And here is useful info on <a href="https://learn.sparkfun.com/tutorials/connecting-arduino-to-processing/to-processing">how to connect Arduino to Processing. </a> <p>
+
+ <p>I started by drawing simple objects and moving them around, changing color, size etc.</p>
+
+
+ <img src="images/processing_play1.png">
+ 	<br></br> 
+ <img src="images/processing_play.png">
+ 	<br></br> 
+
+
+ <p><b>MAIN PROCESSING COMMANDS</p></b>
+
+
+ <p>Placing info above setup/draw --- it becomes part of the global library, which can be accessed anywhere in the script.
+
+ <p>Two main commands:</p>
+
+ <p>void setup -- command to be run once at the beginning</p>
+   
+ <p>void draw -- commands that relate to the animation </p>
+
+<p>Other useful commands:</p>
+
+  <p>mouseX and mouseY (as replacement for static positioning coordinates)</p>
+  <p>smooth</p>
+  <p>map</p>
+  <p>val</p>
+  <p>println</p>
+  <p>string</p>
+  <p>speed</p>
+
+<p>Different types of variables one can use to make animation:</p>
+
+  <p>integers (int) - for whole numbers   ex:    int x = 5;</p>
+  <p>floats - for decimal numbers         ex:    float y = 3.2;</p>
+  <p>strings - a way of storing an array of characters</p>
+
+
+<p>This was the first sucessfull code I ran on Processing:</p>
+
+<br></br> 
+<p><b>MOVING ELLIPSE</b></p>
+
+<p>float x = 100;</p>
+<p>float y = 100;</p>
+<p>float speed = 10;</p>
+<br></br> 
+<p>void setup() {</p>
+<p>  size(640, 460);</p>
+<p>smooth ();</p>
+
+<p>} </p>
+<br></br> 
+
+<p>void draw(){</p>
+ <p> background (0);</p>
+ <p> ellipse (x, y, 40, 40);</p>
+ <p> x = x + speed;</p>
+ <p> float speed = 10;</p>
+
+<p>} </p>
+<br></br> 
+
+
+ <p><b>THE PORT, WHERE IS MY PORT?</b></p>
+
+ <p>It was now time to load my sensor data on to Processing. 
+
+ To find out the name of my serial port, I listed all serial connections on Terminal: </p>
+
+ <p>To get the list, just type</p>
+
+<p>ls /dev/tty.*</p>
+
+<img src="images/port_list.png">
+ 	<br></br> 
+
+<p>You can use the terminal command SCREEN for connecting to serial consoles.</p>
+
+ <p>If you know the serial port, you can just type "screen portname datarate" to show the serial data on the screen. In my case, it was:</p>
+
+<p>screen /dev/tty.usbmodem411 9600</p>
+
+<p>Once I knew my port name, I tried using several examples to see the sensor's data, but it simply wouldn't connect.</p>
+
+ <p>I knew nothing was wrong with the sensor, as I could see accurate readings with my sketch on the Arduino IDE.</p>
+
+ <img src="images/serialread_success.png">
+ 	<br></br> 
+
+ <p>After many hours of struggle, Processing finally accepted to read my sonar-measured distances. Turns out, it only likes to handle numbers, so when I went back to my arduino sketch and removed the commands that added "cm" at the end of each line and the "out of range" sentence, it started to work. </p>
+
+ <p>I used basic commands to ask Processing to draw an ellipse that would turn bigger or smaller according to the distance read. </p>
+
+
+  <p>Here is the code I used: <p>
+
+ <img src="images/serialread_success.png">
+ 	<br></br> 
+
+
+<a href="files/processing_code.zip">Sonar sensor -- Processing code</a> 
+<p>
+
+ 
+<p>And here is a video showing the sonar interface at work:</p>
+
+<a href="https://plus.google.com/photos/113506757890852426847/albums/6148322985865965985">
+<img src="https://lh3.googleusercontent.com/p53Lvu1bTjAZIhYUg5C_1t_vjgc22I_nMthZvUBfwsk=w460-h259-p-no"></a>
+	<br></br>

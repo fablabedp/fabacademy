@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://getbootstrap.com/examples/blog/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Miro Luis" content="Week 13 - Networking">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>Week 13 - Networking</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/miro.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+            /*            height: 200px;*/
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="container"> 
+            <ul class="nav nav-pills nav-stacked navbar-left">
+                <li role="presentation" ><a href="index.html">Home</a></li>
+                <li role="presentation" class="active"><a href="./weeklyassignments.html">Assignments</a></li>
+                <li role="presentation" ><a href="./week1.html">Final project</a></li>
+                <li role="presentation" ><a href="./about.html">About me</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Networking</h1>
+                <p class="lead blog-description">connect me RF</p>
+                <hr>
+                <h2 class="blog-post-title">Make at least two boards communicating with each other.</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div class="blog-post">                        
+
+                        <h3>Networking</h3>
+
+                        <p>In this week i decide to complete what&#8217;s missing in my final project, the wireless conection.
+                            I chouse for this the nRF24L01+ from Nordic to make que simple conection. </p>
+
+                        <img src="https://lh3.googleusercontent.com/-ZxH0aJeSEjo/VUnUQKRmbOI/AAAAAAAAnks/qjYfXrLE9ME/w636-h581-no/nrf.jpg" alt="rf_module" id="rf_module" style="width:620px;" />
+
+
+                        <p>RF it&#8217;s always tricky, but with this chip i expect no problem&#8217;s.
+                            It&#8217;s a simple RF module, but have all the power including to stream music.
+                            But it&#8217;s a simple module because have, no more layers like wifi, or bluetooth.
+                            Because i want to deliver information from trash can into trash can i suspect this is the right solution.
+                            I need to confirm if </p>
+
+                        <h3>FabKit Penela</h3>
+
+                        <p>This week i decided re-make the fabkit. I inspired on <a href="http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html">satshakit</a></p>
+
+                        <p>I add to it. ftdi port.
+                            and the ISP port.</p>
+
+                        <img src="https://lh4.googleusercontent.com/-BAk0HOtzQaA/VUnno2oN0oI/AAAAAAAAnlY/UOnn9iseDqc/w775-h612-no/Screen%2BShot%2B2015-05-06%2Bat%2B11.05.21.png" alt="board_plus_ftdi" id="board_plus_ftdi" style="width:620px;" />
+
+
+                        <p>Than i make it. </p>
+
+                        <img src="https://lh5.googleusercontent.com/-k9ttBN8J0Uo/VUnSaW87OYI/AAAAAAAAni4/O_3pP3TtqjI/w459-h612-no/IMG_20150504_140620.jpg" alt="board_made" id="board_made" style="width:620px;" />
+
+
+                        <p>I have this erros&#8217;s.</p>
+
+                        <img src="https://lh4.googleusercontent.com/-H_upvb7LePU/VUnSaaDZfzI/AAAAAAAAnmY/sFZZqnfsVus/w816-h612-no/IMG_20150505_142127.jpg" alt="board_error" id="board_error" style="width:620px;" />
+
+
+                        <p>I resolve them using a higher resoltuion image. 1000dpi</p>
+
+                        <h3>Vinil cutting.</h3>
+
+                        <ul>
+                            <li>Measure the outline of the board in eagle board</li>
+                            <li>export pads and outline(dimension) as color png.</li>
+                            <li>In Roland Cutstudio import it</li>
+                            <li>Make outline.</li>
+                            <li>remove the image</li>
+                            <li>convert lines to polylines</li>
+                            <li>remove the outer lines and leave the pads and the true outline of the board.</li>
+                            <li>resize to the measure did in eagle.</li>
+                            <p></p>
+                            <li>Vinil cutter force 150gf.</li>
+                        </ul>
+
+                        <h3>soldering is easy</h3>
+
+                        <p>After populate the board i solder it with hot air.</p>
+                        <img src="https://lh4.googleusercontent.com/-32yK2yXFLRE/VUnpJrIN6GI/AAAAAAAAnmw/BymjX20bWpo/w816-h612-no/IMG_20150505_174638.jpg" alt="board_populated" id="board_populated" style="width:620px"/>
+
+                        <p>Another mistake, i not chose the right crystal foot print. </p>
+
+                        <h3>programing the board</h3>
+                        <p></p>
+                        Programing the board was a challenge.
+
+                        First don't work.
+                        I could not upload the arduino bootloader because i use atmega328 and not atemega328p
+
+                        so change <b>signature = 0x1e 0x95 0x14; # 328 old</b> to <b>signature = 0x1e 0x95 0x0F; # 328p  atual</b> in avrdude.conf like said this <a href="http://www.instructables.com/id/Bootload-an-ATmega328/step6/ATmega328-PU-workaround/">site</a>.
+
+                        After than i find that dtr on ftdi connector must have an 100nF capacitor between dtr and reset pin.
+
+                        I found that when you disconnect or misplace or cross the tx rx pin's, it's good politics to remove the usb, and restart the arduino.
+
+                        After this it work's beautifully, but i gone make another board with:
+                        <ul>
+                            <li>redesign the crystal connector</li>
+                            <li>add the capacitor between dtr and reset</li>
+                            <li>make all connector's smd</li>
+                            <li>review the possibility of dual layer board</li>
+                        </ul>
+
+                        VIDEO
+
+                        <h3>123 radio test</h3>
+
+                        <p>I decided use arduino and a library.
+                            Because it&#8217;s a non fail solution.
+                            After than i will gone make my c library. </p>
+
+                        <p>So i have gone to the arduino playground find the nRF24l01.
+                            I find this simple library as a second choice.</p>
+
+                        <p>The test was a success :) </p>
+                        <a href="https://plus.google.com/u/0/photos/116858267463697494571/albums/6145674513987069889/6145709429673913298?pid=6145709429673913298&amp;oid=116858267463697494571"> <img src="https://lh3.googleusercontent.com/-th4d841oXyU/VUnvdw0NtGI/AAAAAAAAnnk/nCt4HchUFog/w426-h757/VID_20150506_112912.mp4" alt="video_working" style="width:320px" class="center-block" /></a></p>
+                    
+                    <h3>Work to do</h3>
+                    Make a breakout board with attiny44 serial gateway to this chip
+                    <a href="http://gizmosnack.blogspot.pt/2013/04/tutorial-nrf24l01-and-avr.html?m=1">link</a> link to same documentation
+
+                    <hr>
+                    Here is the <a href="https://www.dropbox.com/sh/cw1cx1ewxvii41o/AACYi8eWPufo4n_XHY22IxELa?dl=0">link</a> to this week files. :)
+
+
+                </div>
+            </div>          <!-- div class col sm 8 -->
+            <div class="col-sm-4  blog-sidebar">
+                <!-- col-sm-offset-1 -->
+                <div class="sidebar-module ">
+                    <!-- sidebar-module-inset -->
+
+                    <hr>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="https://lh4.googleusercontent.com/-ZxH0aJeSEjo/VUnUQKRmbOI/AAAAAAAAnks/qjYfXrLE9ME/w670-h612-no/nrf.jpg" alt="Chania">
+                                <div class="carousel-caption">
+                                    <!--
+<h3>Chania</h3>
+<p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+-->
+                                </div>
+                            </div>
+
+
+
+                            <div class="item">
+                                <img src="https://lh4.googleusercontent.com/-BAk0HOtzQaA/VUnno2oN0oI/AAAAAAAAnlY/UOnn9iseDqc/w775-h612-no/Screen%2BShot%2B2015-05-06%2Bat%2B11.05.21.png" alt="Flower">
+                                <div class="carousel-caption">
+                                    <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://lh4.googleusercontent.com/-32yK2yXFLRE/VUnpJrIN6GI/AAAAAAAAnm0/uJReZt8AnWc/w816-h612-no/IMG_20150505_174638.jpg" alt="Flower">
+                                <div class="carousel-caption">
+                                    <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                </div>
+                            </div>
+
+
+                            <div class="item">
+                                <img src="https://lh3.googleusercontent.com/-th4d841oXyU/VUnvdw0NtGI/AAAAAAAAnnk/nCt4HchUFog/w426-h757/VID_20150506_112912.mp4" alt="Flower">
+                                <div class="carousel-caption">
+                                    <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <a href="https://plus.google.com/u/0/photos/116858267463697494571/albums/6145674513987069889">
+                        <img src="https://lh4.googleusercontent.com/-Ve6AWOD9-ck/VPbvBxVGz7I/AAAAAAAAkpY/O-pQ10JFJBM/w56-h57-no/Screen%2BShot%2B2015-03-04%2Bat%2B11.39.10.png" alt="photos" height="auto" width="auto" class="center-block">
+                    </a> 
+                    <p class="text-center">
+                        <!--                            This week photos NEED UPDATE-->
+                    </p>
+                    <!--                        pull-left-->
+                    <hr>
+
+
+
+                </div>
+            </div>
+
+        </div><!-- /.blog-sidebar -->
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+<footer class="blog-footer">
+    <p>Miroluis at <a href="http://www.fablabedp.edp.pt/">FabLabEdp</a></p>
+    <p>
+        <a href="./week13.html">Back to top</a>
+    </p>
+</footer>
+
+</div></body>
+
+
+
+</html>

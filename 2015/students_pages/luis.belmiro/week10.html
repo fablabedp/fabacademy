@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://getbootstrap.com/examples/blog/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Miro Luis" content="Week 10 - Input Devices">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>Week 10 - Input Devices</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/miro.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!--    the new one for me to put code inside beautifuly-->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> 
+
+
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+            /*            height: 200px;*/
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="container"> 
+            <ul class="nav nav-pills nav-stacked navbar-left">
+                <li role="presentation" ><a href="index.html">Home</a></li>
+                <li role="presentation" class="active"><a href="./weeklyassignments.html">Assignments</a></li>
+                <li role="presentation" ><a href="./week1.html">Final project</a></li>
+                <li role="presentation" ><a href="./about.html">About me</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Input Devices</h1>
+                <p class="lead blog-description">Sense the world.</p>
+                <hr>
+                <h2 class="blog-post-title">Make an input board that will be useful in the Final project.</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div class="blog-post">                        
+                        <h3>A quick design.</h3>
+
+
+                        <p>In this week i decided make a board than could be a experiment, and useful to the final project.</p>
+
+                        <p>As you can see in my final project proposal i want to make a device than can know the height of the garbage in the trash can&#8217;s. </p>
+
+                        <p>For than i will use IR led&#8217;s and IR phototransistor&#8217;s.</p>
+
+                        <p>Why? Because they are cheaper easy to encapsulate. </p>
+
+                        <p>At first i think in design using an attiy44, but if it was an experiment, it well be in all sense. So i chose attiny45. </p>
+
+                        <p>first i go to the internet try to find an eagle example already made. </p>
+
+                        <p>Why?! because i master eagle so i think i can skip some stages. </p>
+
+                        <p>So i find it <a href="http://www.thingiverse.com/thing:188391">here</a>.</p>
+
+                        <p>Thank&#8217;s Anton Sky. :)</p>
+
+                        <p>I change the ambient light sensor in order to full fill my intent&#8217;s</p>
+
+                        <p>because i want to measure distances how much further as possible i will try to use differential gain amplitude in ADC module, as you can read in ADC section of attiny datasheet. </p>
+
+                        <p>In fact in attiny45 we have 4 single input adc or one 1 diferential adc. </p>
+
+                        <p>I will only need one adc so i chose that. </p>
+
+                        <p>And because i have adc3 as already an adc input, i keep it. and adc2 will be ground&#8230;
+                            Howw wait a minute&#8230;</p>
+
+                        <p><strong>ERROR</strong></p>
+
+                        <p>I make an error in the design i know it now. </p>
+
+                        <p>ADC0 or ADC2 can be used as deferential positive pin. And all ADC pin&#8217;s can be the negative one&#8217;s. </p>
+
+                        <p>So i must change adc3 to adc2 and vice-versa.</p>
+
+                        <p>Ok let&#8217;s begin. That&#8217;s my first experiment. </p>
+
+                        <p>The second experiment is this. I will need an output to the led. But what i pin i should use? My left over pin&#8217;s was MISO and MOSI in programmer header. so i chose to use booth and the experiment if with 2 led&#8217;s in that pin&#8217;s i can program the board. </p>
+
+                        <img src="https://lh4.googleusercontent.com/-yGfJ3t8PJTA/VS2IbmgGYFI/AAAAAAAAmyY/uzMv03-MK1A/w1118-h571-no/Screen%2BShot%2B2015-04-14%2Bat%2B22.35.41.png" alt="eagle sch" id="eaglesch" title="eagle sch" style="width:620px;" />
+
+
+                        <img src="https://lh3.googleusercontent.com/-B1Pi_oryNWM/VS2Ib6KGGeI/AAAAAAAAmyc/GK1BthIRKZU/w956-h568-no/Screen%2BShot%2B2015-04-14%2Bat%2B22.35.51.png" alt="eagle brd" id="eaglebrd" title="eagle brd" style="width:620px;" />
+
+
+
+                        <p>So i design what left in the board.</p>
+
+                        <p>After that i export the board traces and outline to png 500dpi.
+                            But i make another add on, the Penela logo to the board ;)</p>
+
+                        <img src="https://lh6.googleusercontent.com/-QYQVVdML4l0/VS2JsDahzKI/AAAAAAAAmy4/_lMfSWRzkp8/w853-h460-no/pads.png" alt="penela brd" id="penelabrd" title="board penela" style="width:620px;" />
+
+
+                        <p>I was ready to mill.</p>
+
+                        <h3>Milling Time.</h3>
+
+                        <p>It&#8217;s always challenging, but with fabmodule&#8217;s i consider it heavenly easy. </p>
+
+                        <p>This time, i use fabmodules all way down. Because Luis Carvão make a server in the connect pc.</p>
+
+                        <p>It&#8217;s very easy and integrated. as you can see in the photo&#8217;s. </p>
+
+                        <img src="https://lh3.googleusercontent.com/-hZN3_ivUi1M/VS2G2h2UrbI/AAAAAAAAmx4/13Qj1wZTEH0/w949-h568-no/Screen%2BShot%2B2015-04-14%2Bat%2B14.59.53.png" alt="pcb in fabmodules" id="pcbinfabmodules" title="pcb mill" style="width:620px;" />
+
+
+                        <img src="https://lh3.googleusercontent.com/-4MfQqm-JWnw/VS2GnHgZ-pI/AAAAAAAAmxk/xhkniqVZ58U/w426-h568-no/IMG_20150414_153003.jpg" alt="pcb mill" id="pcbmill" title="pcb mill" style="width:320px;" />
+
+
+
+                        <h3>a new way stencil.</h3>
+
+                        <p>Since my first board stencil is a blessing that i carried into the <a href="www.fablabedp.pt">fablab EDP</a>. <a href="http://fabacademy.org/archives/2015/eu/students/boavida.maria/index.html">Maria Boavida</a> my colleague in fabacademy love&#8217;s it every time.</p>
+
+                        <p>But we struggle in something, we can&#8217;t in a easy way extract the only pad&#8217;s from eagle. We need to always go to the gimp or inkscape to kill the traces. </p>
+
+                        <p>But can&#8217;t be&#8230;</p>
+
+                        <p>I search and we found, people use eagle to make board&#8217;s and we have tcream layer that is exactly what we want, so we use it. </p>
+
+                        <dl>
+                            <dt>In order to use it we need to chose another solid color to them, but that&#8217;s it. </dt>
+                            <dd>:)</dd>
+                        </dl>
+
+                        <img src="https://lh5.googleusercontent.com/-FcsO8mvX5rY/VS2LMXdfAOI/AAAAAAAAmzI/SOPE1xvAZdw/w815-h568-no/Screen%2BShot%2B2015-04-14%2Bat%2B22.48.16.png" alt="eagle pads stencil tcream" id="eaglepadsstenciltcream" title="eagle pads stencil tcream" style="width:620px;" />
+
+
+                        <p>After that is the habitual procedure:</p>
+
+                        <ul>
+                            <li>vinil cutter.</li>
+                            <li>vinil on the board</li>
+                            <li>solder paste on the vinil</li>
+                            <li>peal the vinil</li>
+                            <li>place the component&#8217;s</li>
+                            <li>apply hot air 320ºC</li>
+                        </ul>
+
+                        <p>And voila a ready tho program board, nice cleaner wonderful.</p>
+
+                        <img src="https://lh3.googleusercontent.com/-2W_5fwD0HmA/VS2GZivdIbI/AAAAAAAAmxY/IQcCrz-fFdo/w426-h568-no/IMG_20150414_172042.jpg" alt="pcb peal" id="pcbpeal" title="pcb peal" style="width:320px;" class="center-block"/>
+
+                        <p></p>
+                        <img src="https://lh6.googleusercontent.com/-QrYXZqR9qkg/VS2GZnBBhjI/AAAAAAAAmzQ/RrBs3t-YBhM/w757-h568-no/IMG_20150414_172100.jpg" alt="pcb peal" id="pcbpeal" title="pcb peal" style="width:620px;" class="center-block"/>
+
+
+                        <h3>Programming time</h3>
+
+                        <p>So after all this adventure it&#8217;s time to test it. </p>
+
+                        <img src="https://lh6.googleusercontent.com/-_K9VcweMW0I/VS2G2Wm62KI/AAAAAAAAmx0/MxRpg5jwvu8/w732-h578-no/Screen%2BShot%2B2015-04-14%2Bat%2B22.18.10.png" alt="board with no power" id="boardwithnopower" title="board with no power" style="width:620px;" />
+
+
+                        <p>Up&#8217;s it&#8217;s look&#8217;s that board have no Power.. i&#8217;m on debugging&#8230; see you</p>
+                        <hr>
+                        <hr>
+
+                        The board have a short in here as you can see also in milling file up at this page. 
+
+                        <img src="https://lh3.googleusercontent.com/-Sval-gvZ8hk/VVC_t0LHGHI/AAAAAAAAoFU/ZBEPjZMpHZQ/w426-h568-no/IMG_20150511_144554.jpg" alt="pcb peal" id="pcbpeal" title="pcb peal" style="width:620px;" class="center-block"/>
+
+
+                        So i remove it by hand and make a wire insted.
+
+                        <img src="https://lh5.googleusercontent.com/J314mY7eT6Hqxlv8a095lV4HprpxEO3eumJUDGyER_qh=w1118-h496-no" alt="pcb peal" id="pcbpeal" title="pcb peal" style="width:620px;" class="center-block"/>
+
+                        So let's program. <p></p>
+
+                        make -f hello.mag.45.make program-usbtiny<p></p>
+
+                        and test it with<p></p>
+
+                        python hello.mag.45.py /dev/tty.usbserial-FTH0ZXW5<p></p>
+
+                        and here is the result<p></p>
+                        <a href="https://plus.google.com/u/0/+MiroLuis/posts/UuuiVbqnDSV?pid=6148294820368098898&oid=116858267463697494571"><img src="https://lh3.googleusercontent.com/4PJOUHwaMqsH1I0b2J8d53ziJTvbZn5Cwvp-Kmyfe2Yr=s209-p-no" alt="pcb peal" id="pcbpeal" title="pcb peal" style="width:320px;" class="center-block"/></a> 
+
+                        The only diference for magnetic field code of Neil is that i change the ADC.<p></p>
+
+                        ADMUX = (0 << REFS2) | (0 << REFS1) | (0 << REFS0) // Vcc ref<p></p>
+                        | (0 << ADLAR) // right adjust<p></p>
+                        | (0 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // ADC3<p></p>
+
+                        ADC3 insted of ADC2<p></p>
+
+
+
+                        <h3>Nodejs</h3>
+
+                        For the nodejs<p></p> 
+                        npm install ws and serialport <p></p>
+                        I need to install Xcode for instal ws
+                        <p></p>
+
+                        I need to change Neil on serial port. <p></p>
+                        var serial_port = "/dev/tty.usbserial-FTH0ZXW5"
+                        <p></p>
+
+                        and because the serial port sometimes the data comes at block i need to make a funtion to resolve that.
+
+
+                        <pre class="prettyprint">
+function coloca_dados(data){
+   len = data.length;
+   for (var i = 0; i < len; i++) {
+      byte1 = byte2
+         byte2 = byte3
+         byte3 = byte4
+         byte4 = byte5
+         byte5 = byte6
+         byte6 = byte7
+         byte7 = data[i]
+   };
+}
+
+sp.open(function(error) {
+   if (error) {
+      console.log('can not open '+serial_port)
+      }
+   else {
+      console.log('opened '+serial_port)
+      sp.on('data',function(data) {
+
+         coloca_dados(data)
+         // byte1 = byte2
+         // byte2 = byte3
+         // byte3 = byte4
+         // byte4 = byte5
+         // byte5 = byte6
+         // byte6 = byte7
+         // byte7 = data[0]
+         //console.log(data.length)
+         if ((byte1 == 1) & (byte2 == 2) & (byte3 == 3) & (byte4 == 4)) {
+         //console.log(" byte1 " + byte1 + " byte2 " + byte2 + " byte3 " + byte3 + " byte4 " + byte4 + " byte5 " +byte5 + " byte6 " + byte6 + " byte7 " + byte7)
+            value = (byte5 + 256*byte6 + 256*256*byte7)/samples //256*256
+            }
+         })
+      }
+   })
+                        </pre>
+                        
+                        another thing is. 
+                        <p>
+                        </p>
+                        
+                        run node in terminal
+                        
+                        <pre class="prettyprint">
+                            node hello.mag.45.js
+                        </pre>
+                        <p></p>
+                        <b>AND VERY IMPORTANT</b>
+                        <p></p>
+                        open this file hello.mag.45.html in your browser.
+                        <p></p>
+                        node is serving websocket's but not the page it self.
+                        
+                        <p></p>
+                        And the great result is 
+
+                        <a href="https://plus.google.com/photos/+MiroLuis/albums/6148259414066184273/6148259420598789346?pid=6148259420598789346&oid=116858267463697494571"><img                  src="https://lh3.googleusercontent.com/_fzrNvk0zBFKIvlUDOYZzSSj5soUqRbmcRSm_YWuu5ye=s209-p-no" alt="pcb peal" id="pcbpeal" title="pcb peal" style="width:320px;" class="center-block"/></a> 
+<p></p>
+                        I remember that this board is only mesuring the IR light in the air.
+
+<p></p>
+                        Special thanks to mikesamuel who provides the <a href="https://github.com/google/code-prettify">  code prettify</a> :)
+                     <p></p>
+
+                        <hr>
+                        Here is the <a href="https://www.dropbox.com/sh/e2sdlnyrrglc4ov/AAAltgPVnFDQH0iacmAAuEWza?dl=0">link</a> to this week files. :)
+
+
+                    </div>
+                    </div>          <!-- div class col sm 8 -->
+                    <div class="col-sm-4  blog-sidebar">
+                        <!-- col-sm-offset-1 -->
+                        <div class="sidebar-module ">
+                            <!-- sidebar-module-inset -->
+
+                            <hr>
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="https://lh3.googleusercontent.com/-hZN3_ivUi1M/VS2G2h2UrbI/AAAAAAAAmx4/13Qj1wZTEH0/w949-h568-no/Screen%2BShot%2B2015-04-14%2Bat%2B14.59.53.png" alt="Chania">
+                                        <div class="carousel-caption">
+                                            <!--
+<h3>Chania</h3>
+<p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+-->
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="item">
+                                        <img src="https://lh5.googleusercontent.com/-FcsO8mvX5rY/VS2LMXdfAOI/AAAAAAAAmzI/SOPE1xvAZdw/w815-h568-no/Screen%2BShot%2B2015-04-14%2Bat%2B22.48.16.png" alt="Flower">
+                                        <div class="carousel-caption">
+                                            <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="https://lh3.googleusercontent.com/-2W_5fwD0HmA/VS2GZivdIbI/AAAAAAAAmxY/IQcCrz-fFdo/w426-h568-no/IMG_20150414_172042.jpg" alt="Flower">
+                                        <div class="carousel-caption">
+                                            <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                        </div>
+                                    </div>
+
+
+                                    <div class="item">
+                                        <img src="https://lh6.googleusercontent.com/-QrYXZqR9qkg/VS2GZnBBhjI/AAAAAAAAmzQ/RrBs3t-YBhM/w757-h568-no/IMG_20150414_172100.jpg" alt="Flower">
+                                        <div class="carousel-caption">
+                                            <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <a href="https://plus.google.com/u/0/photos/116858267463697494571/albums/6137709632481252465">
+                                <img src="https://lh4.googleusercontent.com/-Ve6AWOD9-ck/VPbvBxVGz7I/AAAAAAAAkpY/O-pQ10JFJBM/w56-h57-no/Screen%2BShot%2B2015-03-04%2Bat%2B11.39.10.png" alt="photos" height="auto" width="auto" class="center-block">
+                            </a> 
+                            <p class="text-center">
+                                <!--                            This week photos NEED UPDATE-->
+                            </p>
+                            <!--                        pull-left-->
+                            <hr>
+
+
+
+                        </div>
+                    </div>
+
+                </div><!-- /.blog-sidebar -->
+            </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+        <footer class="blog-footer">
+            <p>Miroluis at <a href="http://www.fablabedp.edp.pt/">FabLabEdp</a></p>
+            <p>
+                <a href="./week10.html">Back to top</a>
+            </p>
+        </footer>
+
+        </div></body>
+
+
+
+</html>

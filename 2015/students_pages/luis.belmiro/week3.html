@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://getbootstrap.com/examples/blog/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Miro Luis" content="Week 3">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>Week 3</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/miro.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div class="container"> 
+            <ul class="nav nav-pills nav-stacked navbar-left">
+                <li role="presentation" ><a href="index.html">Home</a></li>
+                <li role="presentation" class="active"><a href="./weeklyassignments.html">Assignments</a></li>
+                <li role="presentation" ><a href="./about.html">About me</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Computer-Controlled Cutting</h1>
+                <p class="lead blog-description">Digital cutting... and... action ;)</p>
+                <hr>
+                <h2 class="blog-post-title">Design a press fit Kit - cut it - test it</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div class="blog-post">
+                        <p>My first atempt to laser cuting and build press fit constrotion's</p>
+                        <h2 class="blog-post-title">Press Fit Box in Card Board</h2>    
+                        <p></p>
+
+                        This week we need to design build and test a press fit constrotion.
+
+                        This is a new subject to me, so i start by the begining.<p></p>
+                        First i try hard to figure what is the logic in the inter conection dent's of the side's of a press fit Box.
+                        I design by my self a box try to put my teories in pratice and here the result.
+
+                        <img src="./images/week3/box_card_board.png" alt="Inckscape image of the original box" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">Inckscape image of the original box</p>
+                        <p></p>
+                        But i'm not like it. <p></p>
+                        The idea of press fit and kit is that could be mounted in many possible way's.<p></p>
+                        So i think think, try to imagine the conection's and test it in a 3d software, but i pass to this image 
+                        <img src="./images/week3/press-fit box assem.jpg" alt="Inckscape image of the original box" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">Press fit box</p>
+
+                        <p> With this image i figure how it work's.</p>
+                        <p></p>
+
+
+
+
+
+
+
+
+
+
+                        So i figure aout this law's:
+                        <ul class="list-group">
+                            <li class="list-group-item">1 - the dent's must have de thicness of the material (easy).</li>
+                            <li class="list-group-item">2 - every dent must be equal, execpt the kraf distance</li>
+                            <li class="list-group-item">3 - this implies that the box sizes and dent sizes are inter-related</li>
+                            <li class="list-group-item">4 - there are two dent configurations, one male other female.</li>
+                            <li class="list-group-item">5 - if female dent's be horizontal so the male must be in vertical boarders. And vice versa.</li>
+                        </ul>
+                        <p></p>
+
+
+
+
+                        <p>After that rules are cleared it becomes easy to design the box. </p>
+                        <p>I use inckscape, and try to implement the clone tehcnique teach by Neal.</p>
+                        <img src="./images/week3/base box.png" alt="Inckscape image of the base box" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">Base box</p>
+                        So first as i have made in the first box i made some gauge to help me test the how good the male and female sides conects.
+                        So in the first the dimension that inckscape gives to my 12 mm dent becomes migacaly 12,297 so i asume that because we will have some distance in the kerf. 
+                        I make the others gauge's in card board. 
+                        And thet i chouse the dimension of 12.4 mm in the female dent.
+                        <img src="./images/week3/card board gauge.jpg" alt="gauge's in card board" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">gauge's in card board</p>
+
+
+                        And then i cut the the box, as you can see here. 
+
+                        <p></p>
+                        <img src="./images/week3/card_board_pressfit_box.jpg" alt="gauge's in card board" height="auto" width="620" class="pull-left  ">
+                        <p class="text-center">press fit in card board</p>
+
+
+                        I use the Epilog mini laser 60W
+                        in the parameter's i use a table form Epilog, but i build my own, thak's Delio and Luis ;)
+                        <p></p>
+                        <img src="./images/week3/table.jpg" alt="gauge's in card board" height="auto" width="auto" class="center-block">
+                        <p class="text-center">Here is my table: S-speed P-Power F-Frequency</p>
+                        </img>
+
+
+                    This table proves to be very imporntant because the laser machines become durty in the long run, so the default valeus tend to be in acurate. In mi case in same situations the valeus have difereces of 50%.
+                    <p></p>
+                    Well. the home work is done. So why not i try it in anotehr material and explore more the inkscape.
+                    <p></p>
+                    I do it and i find this.
+                    <ul>
+                        <li>- I must build dent's with round corner as Niel said ;)</li>
+                        <li>- Make a file with all the diferent face's.</li>
+                        <li>- Every face have two side female and male side.</li>
+
+                        <li>- Female dent have one "master" dent, the others are clone's from that.</li>
+                        <li>- Male dent have their own "master" dent.</li>
+                        <li>- Every face have two side female and male side.</li>
+                    </ul>
+
+
+
+                    What i learn:
+                    <ul>
+                        <li>- Guide lines in inkscape are awsome. you can find it picking it from the rulers.</li>
+                        <li>- When i whant to make the final shape, all object merge in one, face and dent's.</li>
+                        <li>I must:
+                            <ul>
+
+                                <li>- unlink the clones</li>
+                                <li>- convert all object to path</li>
+                                <li>- and the make a union of them and that's it.</li>
+                            </ul>
+
+
+                        </li>
+
+
+                    </ul>
+
+
+
+
+
+
+
+
+                    After make this "original" file, i pick up one face male and another female to make some gauge's and test the kerf this time the material was MDF 3mm tikness.
+
+
+                    <p></p>
+                    <img src="./images/week3/box_template_MDF.jpg" alt="gauge's in card board" height="auto" width="auto" class="center-block">
+                    <p class="text-center">Inkscape box template MDF</p>
+                    </img>
+
+
+                Here are the photo of the gauge's in MDF
+
+                <p></p>
+                <img src="./images/week3/box_template_MDF.jpg" alt="gauge's in card board" height="auto" width="auto" class="center-block">
+                <p class="text-center">Inkscape box template MDF</p>
+                </img>
+
+            In this test i found that mi short measure 12mm still be to lose. 
+            So i make the other's valeus shorter.
+
+            After that i find that 11.9 is to tight and 12mm is to lose so i chouse 11.95 and with the help of Luis i make an act of faith and i go to the cut of the all box. 
+            <p></p>
+            <img src="./images/week3/gauge_MDF.jpg" alt="gauge's in MDF" height="auto" width="auto" class="center-block">
+            <p class="text-center">Inkscape box template MDF</p>
+            </img>
+        This time with the round conner's a great insight.
+
+        And then here it is the Awsome box. 
+        Could be a very simple box, but it allow's me to learn a lot about, inkscape, 2D design, laser cut, and press fit contruction's
+
+
+        <a href="https://lh5.googleusercontent.com/-uF9QiE1z4dY/VOSQu79WNmI/AAAAAAAAgiU/OorPT-Upz1o/w779-h584-no/IMG_20150218_131629.jpg">
+            <img src="./images/week3/caixafinal.png" alt="gauge's in MDF" height="auto" width="auto" class="center-block">
+            <p class="text-center">The final box in MDF</p>
+        </a>
+
+
+
+
+
+
+        <h2 class="blog-post-title">Antimony</h2>    
+        <p></p>
+
+
+        I try to install it 3 times in virtual machines and stuff like that, i can't do that and i don't give to that the priority. 
+        I just play it around with Luis that put it to work in the Linux in a Fablab computer.
+
+
+        <h2 class="blog-post-title">Stikcers</h2>    
+        <p></p>
+        Well is computer cutting why not play with some stikers and give them to my Kid's ;) 
+        the first thing is to google for free vectorial animals image's no sucess
+        Googling to images of stikers of animal's this is more easy. 
+        But this images are raster. 
+        So what we can do...?!
+        Ahhhh yes, it's it Fabmodules. them prove to be great. 
+        as you can see. 
+
+        <p></p>
+        <p></p>
+
+        <!--
+
+
+<img src="./images/SketchTrashRhino.png" alt="Sketch of the Trash Tracker made in Rhino" height="auto" width="620" class="pull-left  ">
+<p class="text-center">Sketch of the Trash Tracker made in Rhino</p>
+<p></p>
+
+<img src="./images/TrashRhinoRendered.png" alt="First Rendered of the Trash Tracker made in Rhino" height="auto" width="620"   class="pull-left  ">
+<p class="text-center">First Rendered of the Trash Tracker made in Rhino</p>
+<p></p>
+<h2 class="blog-post-title">Antimony</h2>        
+<p></p>
+When i have tried use antimony in my mac, it not work, breack and close, i'm trying to use it in virtual XP. 
+
+-->
+        <hr>
+        Here is the <a href="https://www.dropbox.com/sh/rbjtusmfgves9by/AAD68Rd1hOKEJJRgHxBu0e9ea?dl=0">link</a> to this week files. :)
+
+        </div>
+    </div>          <!-- div class col sm 8 -->
+<div class="col-sm-4  blog-sidebar">
+    <!-- col-sm-offset-1 -->
+    <div class="sidebar-module ">
+        <!-- sidebar-module-inset -->
+        <div  class="media">
+            <img src="./images/week3/caixafinal.png" alt="Logo made in Windows Paint and Wacom HD13" height="auto" width="310" class="pull-left  ">
+            <p class="text-center">Final press fit Box :)</p>
+            <p></p>
+            <p></p>
+            <a href="https://plus.google.com/u/0/photos/+MiroLuis/albums/6116960967051601585">link</a>
+            <p class="text-center">Link to the all photos of this week</p>
+            <p></p>
+            <!--
+<img src="./images/concepPQ.png" alt="Sketch of the Trash Tracker aplication made in Windows Paint and Wacom HD13" height="auto" width="310" class="pull-left  ">
+<p class="text-center">Sketch of the Trash Tracker aplication made in Windows Paint and Wacom HD13</p>
+<p></p>
+-->
+            <!--
+<img src="./images/TrashTrackerInk.png" alt="Sketch of the Trash Tracker made in inkScape" height="auto" width="310" class="pull-left  ">
+<p class="text-center">Sketch of the Trash Tracker made in inkScape</p>
+-->
+            <p></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div><!-- /.blog-sidebar -->
+
+</div><!-- /.row -->
+
+</div><!-- /.container -->
+
+<footer class="blog-footer">
+    <p>Miroluis at <a href="http://www.fablabedp.edp.pt/">FabLabEdp</a></p>
+    <p>
+        <a href="./week3.html">Back to top</a>
+    </p>
+</footer>
+
+</div></body></html>

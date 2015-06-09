@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>final project</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+ 
+<div class="navbar navbar-default">
+  <div class="container">
+    <a class="navbar-brand" <a href="index.html">maria boavida</a></a>
+    <ul class="nav navbar-nav">
+<!--       <li class="active"><a href="#">home</a></li>
+ -->
+       <li><a href="index.html">asignments</a></li>
+      <li><a href="about.html">about</a></li>
+      <li class="divider-vertical"></li>
+   <!--    <li><a href="#">More</a></li>
+      <li><a href="#">Options</a></li> -->
+    </ul>
+  </div>
+</div>
+<div class="container"> 
+
+  
+    <div class="col-lg-6">
+       <h3>week 10: input devices</h3>
+      
+
+
+<h2><b>Hello sonar!</b></h2>
+<br></br>
+
+  <div class="container" style="width=500"> 
+
+
+<p>Our assignment this week was to "measure something" that is relevant for the final project. We were to add a sensor to a microcontroller board that we design and read it.</p> 
+
+<p>For my final project I am making a hydroponic herb garden. Here is the system I have in mind:</p>
+
+
+<img src="images/hydroponic_gardens.jpg">
+<br></br>
+
+<p>I will use both a water level and a PH sensor to automate my system, but this week I focused on the first. I wanted to program the sensor to do a reading once a day and turn on a green LED light when the water container is running low.</p>
+
+<p><b>THE ULTRASONIC SENSOR</p></b>
+
+<p>There are a few different ways to measure distance, but I thought using an ultrasonic sensor was a good option, as it doesn't need to be dipped in the water. </p>
+
+<p>Ultrasonic sensors are designed to sense object proximity or range by measuring the pulse reflection time -- the time it takes to reflect ultrasound waves between the sensor and a solid object. They are popular because they are inaudible to the human ear and quite accurate within short distances.</p>
+
+<p>How it works</p>
+
+<p>"A basic ultrasonic sensor consists of one or more ultrasonic transmitters (basically speakers), a receiver, and a control circuit. The transmitters emit a high frequency sound, which bounces off any nearby solid objects. Some of that ultrasonic noise is reflected and detected by the receiver on the sensor. That return signal is then processed by the control circuit to calculate the time difference between the signal being transmitted and received. This time can then be used to calculate the distance between the sensor and the reflecting object."</p>
+
+<a href="http://www.tecoed.co.uk/distance-sensor.html" </a> </p>
+
+<img src="images/ultrasonic_principle.jpg">
+<br></br>
+
+<br></br>
+
+<p>As I could not find the recommended HCSR-04 ultrasonic sensor, I ended up using the Non Blind Zone Ultrasonic Module SRF04.</p> 
+
+<img src="images/ultrasonic_sensor.jpg">
+<br></br>
+
+
+<p>Ultrasonic sensor SRF04 -- datasheet</p>
+
+<a href="http://www.robot-electronics.co.uk/htm/srf04tech.htm"</a>
+
+<p><b>DESIGNING THE CIRCUIT</p></b>
+
+<p>I used Neil's transmit-receive board as the starting point for my design, but I changed a few things:</p>
+
+<p> - Turned the second Ground in J3 into a VCC </p>
+<p> - Took out both 1M resistors</p>
+
+<p>Here's my circuit's schematic and board on Eagle:</p>
+
+<img src="images/eagle_finalboard.jpg">
+<br></br>
+
+<p>Here's Neil's model and my sonar board:</p>
+
+
+<img src="images/board_comparison.jpg">
+<br></br>
+
+<p>I was going to use a vinyl mask to apply solder paste to my circuit pads, so I needed to create a second file in Eagle. I picked layer 31 "tCReam" and got a view of my board with nothing but the pads:</p>
+
+<img src="images/hello_sonar_mask1.jpg">
+<br></br>
+
+<p>I exported the traces and the pads as .png files -- 500dpi, monochrome.</p>
+
+<p>Then I used GIMP to make the board's contour.</p>
+
+	
+<img src="images/contour_gimp.jpg">
+<br></br>
+
+<p><b>MILLING THE BOARD</p></b>
+
+<p>I uploaded the images into fabmodules.org and when I saw the toolpath realized that a couple of my vias were too close together for the millbit to pass. I made them slightly thinner in Eagle: select the route you want to edit, right-click, go to "properties", edit "width" (I went from 0.016 to 0.012).</p>
+
+<p>Once the board was edited, I uploaded it again into fabmodules and this time was able to mill the PCB quite quickly.</p>
+
+
+<img src="images/milling.jpg">
+<br></br>
+
+<p>The circuit was looking pretty good:</p>
+
+<img src="images/milled_traces.jpg">
+<br></br>
+<img src="images/pcb_ready.jpg">
+<br></br>
+
+<p><b>MASK MAKING</p></b>
+
+<p>I used the vinyl cutter to cut the mask on which I was going to apply the solder paste. </p>
+
+
+<img src="images/mask_cutting.jpg">
+<br></br>
+
+<p>I applied the paste and pulled out the vinyl sticker, the pads looked nicely covered in paste, so I only needed to do a few retouches with the x-acto knife before it was ready to add the components.</p>
+
+
+<img src="images/mask_pulling.jpg">
+<br></br>
+
+<p><b>SOLDERING COMPONENTS</p></b>
+
+<p>I placed the components on the pasty pads:</p>
+
+
+<img src="images/component_placement.jpg">
+<br></br>
+
+<p>I set up the hot gun at 340ºC and kept it on the circuit until the paste turned shinny.</p> 
+
+
+<img src="images/soldering.jpg">
+<br></br>
+
+<p>A couple of minutes and all components were neatly attached to the board</p>
+
+
+<img src="images/mounted_board.jpg">
+<br></br>
+
+<p>Now it was time to test it with my ISP.</p>
+
+
+<img src="images/ready_to_program.jpg">
+<br></br>
+
+<p>I connected my hello_sonar board to the ISP and both to the computer.</p>
+
+<p><b>SMOKE!!</p></b>
+
+<p>After hours of de-soldering, re-soldering all components and replacing the Attiny, the reason for the smoke finally became apparent -- the MODELA had not taken out a little bit of copper which was discretely connecting the MISO to the MOSI pads on the microcontroller. After removing that small bit of unwanted copper, I resoldered the Attiny and connected it again to the ISP. </p>
+
+<p><b>NO SMOKE!!</p> </b>
+
+<p>I attached the sensor to the circuit board, and sent a test code to see if my microcontroller was ready to be programmed. And now it was.</p>
+
+<img src="images/sonar_plugged.jpg">
+<br></br>
+
+
+<p>I found an arduino project with code for the ultrasonic sensor:</p>
+
+<img src="images/arduino_sonar_sketch.jpg">
+<br></br>
+	
+<a href="http://arduinobasics.blogspot.pt/2012/11/arduinobasics-hc-sr04-ultrasonic-sensor.html"</a> 
+
+<a href="http://www.instructables.com/id/Simple-Arduino-and-HC-SR04-Example/step3/Upload-the-sketch/"</a>
+
+
+<b><p>PROGRAMMING</p> </b>
+
+
+<p>to be continued...</p> 
+
+<p><b>EAGLE FILES</b> </p> 
+
+<a href="files/hello_sonar.brd"</a> 
+
+<a href="files/hello_sonar.sch"</a> 
+
+
+
+
+
+<!-- Keep C file e makefile in the same folder
+
+
+
+Uploaded NEWPING library
+
+Pyserial
+
+I installed Pyserial to be able to read the sensor's data.
+pyserial_install.png
+	
+	
+<img src="images/do_not_connect.jpg">
+<br></br>	
+	
+
+		
+ -->
+
+
+
+<!-- 
+LINKS
+http://academy.cba.mit.edu/content/tutorials/akf/input_device_examples_ArduinoIDE.html
+
+ -->
+
+
+
+
+
+<!-- Operating Principle：                                                        
+1. Using IO trigger to measure distance, giving TRIG at least 10us signal.
+2. The module automatically sends eight 40KHZ square wave, and automatically detects whether a signal returns.
+3. If the signal returns, ECHO would outputs a 0 signal after test. The duration from TRIG = 1 to ECHO = 0 is the time of ultrasonic wave from the transmitter to return.
+4. When TRIG from 0 -> 1, the MPU starts 18ms timer to control this measurement timeout. When more than 18ms, ECHO still does not appear 250us 0 signal, which means that there are no obstructions.
+
+NEW PING - fast ultrasonic arduino library:
+
+https://code.google.com/p/arduino-new-ping/downloads/detail?name=NewPing_v1.5.zip&can=2&q=
+
+http://forum.arduino.cc/index.php/topic,106043.0.html
+
+http://www.elecfreaks.com/5717.html
+http://www.elecfreaks.com/264.html -->
+
+
+
+
+
+
+<!-- 
+
+
+
+NEIL's CLASS
+
+The response of the humidity sensor is measured for a step change in the humidity
+
+
+STEP RESPONSE SENSOR
+
+measures the "time to charge" - measures the delay
+
+lets you measure distance, rotation, temperature, humidity, movement, light, etc....works just by measuring charges
+
+Charge, measure
+De-charge, measure
+
+you can sense liquide presence, by having liquid between the 2 electrodes
+
+ (vinil cutter to help make a wide range of different sensors)
+
+
+IMAGES
+
+ OPEN CV - standard library for doing video
+ LIVE UBC - library that lets you talk to a web cam
+
+ WEBRTC - standard for talking to video from webrowsers (video from html)
+
+ WEARABLES
+ conductive strech textiles
+ conductive threads
+ international fashion team
+
+
+ JAVASCRIPT + WEBRTC - BEST WAY TO WRITE VIDEO CONTENT
+
+
+ DESIGN A BOARD WITH A SENSOR
+
+ measure somethign that is relevant to the final project
+ get familiar with programming
+
+
+
+
+SENSORS
+
+No single sensor can satisfy every application 
+
+
+Resistive, capacitive, and thermal conductivity sensing technologies each offer distinct advantages. 
+Resistive sensors are interchangeable, usable for remote locations, and cost effective. 
+
+Capacitive sensors provide wide RH range and condensation tolerance, and, if laser trimmed, are also interchangeable. 
+Thermal conductivity sensors perform well in corrosive environments and at high temperatures. For most applications, therefore, the environmental conditions dictate the sensor choice.
+ -->

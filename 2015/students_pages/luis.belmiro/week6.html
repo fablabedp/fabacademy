@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://getbootstrap.com/examples/blog/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="Miro Luis" content="Week 6">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>Week 6</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/miro.css" rel="stylesheet">
+
+
+
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+            /*            height: 200px;*/
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="container"> 
+            <ul class="nav nav-pills nav-stacked navbar-left">
+                <li role="presentation" ><a href="index.html">Home</a></li>
+                <li role="presentation" class="active"><a href="./weeklyassignments.html">Assignments</a></li>
+                <li role="presentation" ><a href="./about.html">About me</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Electronics Design</h1>
+                <p class="lead blog-description">Test many EDA, time trial making electronics</p>
+                <hr>
+                <h2 class="blog-post-title">Testing Blue.</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div class="blog-post">
+                        <h3>When the deliver's give software.</h3>
+
+                        <img src="http://pt.mouser.com/images/msb/msb-landing-header.jpg" alt="FABISP" height="auto" width="620" class="center-block">
+
+                        <img src="https://lh3.googleusercontent.com/eTMgzc2BSHb42gaIP3ZMtscmYA7Zb7Cjmig7_KNwjsFc=w116-h206-p-no" alt="FABISP" height="auto" width="auto" class="center-block">
+
+
+                        Farnell have eagle. RS amidata has designspark, and now Mouser have Multisim blue.
+                        <p></p>
+                        Niel invite us to test Blue, so i was curious too, so i did it. 
+                        <p> </p>
+                        Things that Blue promise's:
+                        <ul>
+                            <li>
+                                Free</li><li>
+                            Schematic design tool</li><li>
+                            Pcb design tool </li><li>
+                            Simulation toll</li><li>
+                            Many layers</li><li>
+                            Connected to mouser cart directly. </li>
+                        </ul>
+
+                        <p></p>
+                        First thing i don't like in Blue it's an heavy program. 
+                        800Mb
+                        <p></p>
+                        Only works in windows
+                        <p></p>
+                        But i still go and try it. 
+                        But when i do that i discoverer that there are no mcu from Atmel in database, only from microchip. 
+                        But i will try to make one and put them there. 
+
+
+                        <hr>
+                        <h2>Redesign the hello world Board.</h2>
+                        <h3>My old friend Eagle.</h3>
+
+                        I'm an electronic engineer so this my ground, i start designing circuit's in Protel, today's Altium. 
+                        <p></p>First when i try eagle i find it very strange with look like linux command's.
+                        But eagle have a thing, have plenty off ready to go libraries.
+                        So i began with it.
+
+                        <img src="https://kalshagar.wikispaces.com/file/view/eagle.jpg/292474728/eagle.jpg" alt="FABISP" height="auto" width="320" class="center-block">                        
+                        In this week task i try something different. <p></p>
+                        Neil said that is possible to complete a PCB in one Hour. <p></p>
+                        So i try a time trial to myself. <p></p>
+                        I have used fablibrary, and eagle 7, my first attempt in that version.<p></p>
+                        Design in eagle is easy for me indeed, but the routing the pcb is an art in fact. 
+                        So i cheat a bit and inspire my ICSP conector position and locations, and the with of the traces in the hello world finished board. 
+                        Because of that delay i spend most than an hour designing the circuit. 
+                        But fabricate the circuit, well that i do it in minutes, thank's Fabmodules :)
+                        <img src="https://lh4.googleusercontent.com/-uPek8zHDkak/VQAffpOEZyI/AAAAAAAAk08/OYysKjwJxEo/w1091-h568-no/Screen%2BShot%2B2015-03-11%2Bat%2B10.52.23.png" alt="FABISP" height="auto" width="620" class="center-block"> 
+
+                        <p></p>
+                        After the fabrication i began solder the mcu, and than horror.... an Error... 
+
+                        <img src="https://lh6.googleusercontent.com/-MfN1ni-ChtU/VQAhnlOdh8I/AAAAAAAAk1s/StHYmPnGvtE/w532-h568-no/wrong%2BBoard.jpg" alt="FABISP" height="auto" width="620" class="center-block"> 
+
+
+
+
+
+                        <p></p>
+                        Well i'm in a time trial so i began to solder another board.
+                        <p></p>
+                        Made the pcb and solder all the component's.<p></p>
+                        <img src="https://lh5.googleusercontent.com/-RvK8Bw3oPVJ2u8GJLrj9oHPaHaToMifjB0SwRgt7WyM=w519-h568-no" alt="FABISP" height="auto" width="620" class="center-block"> 
+                        Time trial result's in 3 hours with biobreak in the middle, i design a board, made two, and solder it. <p></p>
+
+                        <img src="http://joshianlindsay.com/images/65.jpg" alt="FABISP" height="auto" width="620" class="center-block"> 
+
+
+
+                        I thing the idea of Neal is correct is simple and quick to build a pcb, and is mutch better than bread board's or perforated board's. 
+                        <p></p>
+                        Great technology  this.<p></p>
+                        <a href="https://plus.google.com/u/0/photos/yourphotos?pid=6124258390911344690&oid=116858267463697494571">
+                            <img src="https://lh3.googleusercontent.com/Rct--W9jAV5VPA0iKqdlIQpYzc5Tq4MAP_lxd2pP4J2B=s209-p-no" alt="FABISP" height="auto" width="320" class="center-block"> </a>
+
+
+                        After lunch i just put the blink code in it, with MKII programmer, and with Arduino. <p></p>
+                        Thank's <a href="https://www.facebook.com/nuno.farinha.silva">Nuno Farinha</a> for the help.
+                        I follow this <a href="http://academy.kaziunas.com/tutorials/embedded_programming_arduinoIDE.php">tutorial</a> to do that.
+
+
+
+                        <hr>
+
+                        <h2>Reprogram fabisp</h2>
+                        <h3>Fight again...</h3>
+                        In the 4th week i made the fabISP, great week where i find how to build quick and easy a pcb. 
+                        <p></p>
+                        I try to program it, but not work. 
+                        <p></p>
+                        All the the step's in Mac run's smoothly, but when i connect the fabisp to the PC it not recognise it. <p></p>
+                        I try to resolder all the component's and notting. <p></p>
+                        I try to reprogram it in windows and nothing. <p></p>
+                        Windows - i found an issue, windows 8.1 64 bit not runs well winavr compilation, said rm.exe have a problem.<p></p>
+                        My suspicion goes to burn outed attiny, or avrdude line in make file wrong.<p></p>
+                        Still working on it.
+                        <p></p>
+                        The Ha Haaaa moment.
+                        I finaly find the issue, i have one miss resitance. 4993(499K&#937) instead of 4990(499&#937) 
+                        <img src="https://lh5.googleusercontent.com/RV4TD6yrtBmeuzL_yGSNwBdwru1PSbZJo06XOTF4dQpc=w757-h568-no" alt="FABISP" height="auto" width="620" class="center-block"> 
+
+
+
+
+
+
+
+                        <hr>
+
+
+                        <hr>
+                        Here is the <a href="https://www.dropbox.com/sh/ufpu7jjvb61gxrp/AADfUjGEzetH9SZCW6ipQoNfa?dl=0">link</a> to this week files. :)
+
+
+                    </div>
+                </div>          <!-- div class col sm 8 -->
+                <div class="col-sm-4  blog-sidebar">
+                    <!-- col-sm-offset-1 -->
+                    <div class="sidebar-module ">
+                        <!-- sidebar-module-inset -->
+
+                        <hr>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://lh5.googleusercontent.com/-1dmN7xzXCi8/VQAlsTztf5I/AAAAAAAAk2Q/nUN0b8ObS8k/w455-h568-no/Screen%2BShot%2B2015-03-11%2Bat%2B11.23.03.png" alt="Chania">
+                                    <div class="carousel-caption">
+                                        <!--
+<h3>Chania</h3>
+<p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+-->
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://lh4.googleusercontent.com/-uPek8zHDkak/VQAffpOEZyI/AAAAAAAAk08/OYysKjwJxEo/w1091-h568-no/Screen%2BShot%2B2015-03-11%2Bat%2B10.52.23.png" alt="Chania">
+                                    <div class="carousel-caption">
+                                        <!--
+<h3>Chania</h3>
+<p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+-->
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://lh5.googleusercontent.com/2KNon7WXnLU0O2BlkJe_oPisVk8uuDeoIvPmVWATfUOW=w684-h568-no" alt="Flower">
+                                    <div class="carousel-caption">
+                                        <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://lh3.googleusercontent.com/eTMgzc2BSHb42gaIP3ZMtscmYA7Zb7Cjmig7_KNwjsFc=w128-h228-p-no" alt="Flower">
+                                    <div class="carousel-caption">
+                                        <!--
+<h3>Flowers</h3>
+<p>Beatiful flowers in Kolymbari, Crete.</p>
+-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+                        <a href="https://plus.google.com/u/0/photos/+MiroLuis/albums/6124741664808196609">
+                            <img src="https://lh4.googleusercontent.com/-Ve6AWOD9-ck/VPbvBxVGz7I/AAAAAAAAkpY/O-pQ10JFJBM/w56-h57-no/Screen%2BShot%2B2015-03-04%2Bat%2B11.39.10.png" alt="photos" height="auto" width="auto" class="center-block">
+                        </a> 
+                        <p class="text-center">
+                            This week photos
+                        </p>
+                        <!--                        pull-left-->
+                        <hr>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div><!-- /.blog-sidebar -->
+        </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+    <footer class="blog-footer">
+        <p>Miroluis at <a href="http://www.fablabedp.edp.pt/">FabLabEdp</a></p>
+        <p>
+            <a href="./week5.html">Back to top</a>
+        </p>
+    </footer>
+
+    </div></body></html>

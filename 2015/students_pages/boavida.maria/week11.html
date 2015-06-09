@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>final project</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+ 
+<div class="navbar navbar-default">
+  <div class="container">
+    <a class="navbar-brand" <a href="index.html">maria boavida</a></a>
+    <ul class="nav navbar-nav">
+<!--       <li class="active"><a href="#">home</a></li>
+ -->
+       <li><a href="index.html">assignments</a></li>
+      <li><a href="about.html">about</a></li>
+      <li class="divider-vertical"></li>
+   <!--    <li><a href="#">More</a></li>
+      <li><a href="#">Options</a></li> -->
+    </ul>
+  </div>
+</div>
+<div class="container"> 
+
+  
+    <div class="col-lg-6">
+       <h3>week 11: input devices</h3>
+
+
+  <div class="container" style="width=500"> 
+
+<br></br>
+<p><b>WATER PUMP</b></p>
+<br></br>
+
+
+<p>This week our assignment was to design a board, add an output device and get it to do something.</p> 
+
+<p>I chose use a DC motor as an output, since I will be needing a water pump for my final project, a vertical hydroponic garden.</p>
+
+<p>I will be using a solar-powered water pump, as I won't have an energy source in the balcony where the garden will be set up. The pump is a "made-in-china" BP200, with the following specs:</p>
+
+<p>- Maximum flow rate 150 litres per hour</p>
+<p>- Maximum water lift approx 70cm</p>
+<p>- Power consumption:7V/160mA</p>
+<p>- Solar panel 4.5V/~10V </p>
+<p>- Solar panel dimensions 180mm x 120mm</p>
+
+<img src="images/solar_pump.png">
+<br></br>
+
+<p>For my hydroponic system, I need the water to be pumped from the bottom container through the NFT trays about once every half hour. So my goal this week is to make the motor run with a timer.</p>
+
+<p><b>DESIGNING THE CIRCUIT</b></p>
+
+I took Neil's h-bridge board as starting point for my board design. </p>
+
+<img src="images/hbridge_board.png">
+<br></br>
+
+<p>But since I didn't need my motor to run forwards and backwards, I was going to use a N-mosfet instead of an h-bridge. Despite its tiny size, the mosfet lets you source and sync a lot of current. These transistors require a positive gate voltage to turn “ON” and a zero voltage to turn “OFF”, working like a kind of switches. I placed the 3-legged mosfet between my Attiny44 micro-controller and the jack plug connecting to the DC motor. It would bring up the 5V current coming out of the Attiny to the 10V I needed to make the motor move.</p>
+
+<img src="images/mosfet.png">
+<br></br>
+
+<p>I was unable to find the Jack plug component we have at Fablab EDP in any existing Eagle library, so they had to be designed from scratch. I found a youtube tutorial that explains how to do this:</p>
+
+<p><a href="https://www.youtube.com/watch?v=qPAPggihC8I">creating a new library part in Eagle</a><p>
+
+<p>I use the component's datasheet to find the right-size drawing of the pads. This is the new component created:</p>
+
+<img src="images/jack_pads.png">
+<br></br>
+
+<p>Once I had the pads designed, my circuit was ready to be milled. Here is final my board design:</p>
+
+<img src="images/eagle_board.png">
+<br></br>
+
+<p><b>MILLING THE BOARD</p></b>
+
+<p>I uploaded the .png files I exported from Eagle into fabmodules and the milling went pretty smoothly.</p>
+
+<img src="images/milling_dcboard.png">
+<br></br>
+
+<p>I also exported an image of my circuit's pads, so I could cut up a vinyl mask to apply the soldering paste, as I had done in previous weeks. After cleaning up the board with steelwool and washing it up with water and soap, I started adding my components.</p>
+
+<img src="images/board_solderpasting.png">
+<br></br>
+
+
+<img src="images/placing_components.png">
+<br></br>
+
+<p>A little heat gun to turn the solder paste hard and shinny</p> 
+
+<img src="images/heat_gun.png">
+<br></br>
+
+<p>And the board was mounted and ready!</p>
+
+<p>I then soldered the two Jack plugs to the battery and the DC motor to connect them to the board. I used a 9V battery this week to test the system, but will replace it with a solar panel (which will in turn charge a lithium battery) for the final project.</p> 
+
+<p>I checked the current flow on different parts of the board and everything seemed to be ok. I then plugged the ISP to the board, it was ready to be programmed.</p>
+
+<img src="images/output_system.png">
+<br></br>
+
+<p><b>PROGRAMMING</b></p>
+
+<p>(to be continued....)</p>
+
+
+
+
+
+
+
+

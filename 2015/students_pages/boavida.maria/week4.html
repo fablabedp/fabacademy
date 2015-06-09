@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>final project</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+ 
+<div class="navbar navbar-default">
+  <div class="container">
+    <a class="navbar-brand" <a href="index.html">maria boavida</a></a>
+    <ul class="nav navbar-nav">
+<!--       <li class="active"><a href="#">home</a></li>
+ -->
+       <li><a href="index.html">assignments</a></li>
+      <li><a href="about.html">about</a></li>
+      <li class="divider-vertical"></li>
+   <!--    <li><a href="#">More</a></li>
+      <li><a href="#">Options</a></li> -->
+    </ul>
+  </div>
+</div>
+
+
+<!-- <div class="image">
+
+  <img src="images/noise.jpg" width="500">
+ -->
+<!--    <div class="jumbotron"> -->
+   <!--  <h3>This is going to be awesome!</h3>    -->
+
+    <!--  <p class="lead">The Bootstrap 3 grid is fluid only. This example shows how to use a custom container to create a fixed width layout.</p> -->
+    
+    <!-- <p><a class="btn btn-large btn-success" href="http://bootply.com/tagged/bootstrap-3" target="ext">More Examples</a></p> -->
+
+
+  <div class="container"> 
+
+  
+  
+       <h3>week 4: electronics production</h3>
+      
+
+
+<h2><b>Circuits and other tiny things</b></h2>
+<br></br>
+
+  <div class="container" > 
+
+
+<p>This week the task was to mill a PCB and solder its respective components. </p> 
+
+ <p>I've never really worked with electronics before, so I was a bit nervous about making a PCB from scratch. It turned out to me a much simpler process than I had thought.  </p>
+
+  <p><b>MILLING</p></b>
+
+ <p>Milling the PCB was a fairly straightforward task, since I was using <a href="www.fabmodules.org">fabmodules</a>. Fabmodules automatically creates the toolpaths for the Modela, so  not much was left to adjust. I uploaded Neil's .png with the PCB design and selected the mill bit I was going to use: 1/64 mill bit for the interior traces, 1/32 mill bit to cut out the external border</p>
+
+ <p>I set up the copper plate on the sacrificial board, and taped it down it as flat as possible.</p>
+ 
+
+ <p>At fablab EDP, we use a Modela with an attached Dremel tool (a handy hack done by <a href="http://academy.cba.mit.edu/2013/students/meier.ferdinand/electronics_production.html">Ferdinand Meier</a> during fabacademy 2013), so the home position is now outside the actual milling area.</p> 
+
+
+<p>As I did a shallow contour of the PCB on the copper plate, it became apparent that the surface was not perfectly flat. The plate had been previously used so it was actually pretty tilted, as you can see in the picture:</p>
+
+<img src="images/pcb_surfacing.jpg">
+<p></p>
+
+<p>I nevertheless went on to mill it, thinking that a lot of offsets would somehow fix the uneveness of the cut. </p>
+
+<img src="images/pcb_fail.jpg">
+<p></p>
+
+<p>And indeed they did. So I went on to cut out the contours; I used a bigger mill (2mm) than the suggested 1/32 (0.8mm).</p>
+
+<img src="images/first_pcb.jpg">
+<p></p>
+
+<p>As I took out the pcb from the plate, it was looking pretty good. But as I cleaned it up I realized it was not that good after all: the outside paths had been destroyed by the power of the 2mm mill bit! This was a clear PCB fail...</p>
+
+<img src="images/pcb_fail1.jpg">
+<p></p>
+
+<p>And so, I went on to mill a second PCB, this time using the right mill bit for the outside contours. The second one did not fail. </p>
+
+
+<img src="images/second_pcb.jpg">
+<p></p>
+
+<p>Now that the pcb was done and carefully cleaned (steelwool, followed by water and soap), it was time to add the components and start soldering. To help me in the process, I printed out a paper with a bigger version of the board image. I then taped all the tiny components to it, like numbers on a bingo board -- this proved to be a rather useful guide to my soldering operations. </p>
+
+<img src="images/bingo_board.jpg">
+<p></p>
+
+ <p> Three notes on the milling process:</p>
+
+
+<p>- start by manually setting up the "right" home. </p>
+
+<p>- remember to do this with the Dremel tool on, or the mill may break when it touches the surface;
+</p>
+<p>- after changing millbits, remember to clear the Z by goin up or down.</p>
+<p><b>SOLDERING</p></b>
+
+<p>As I had never soldered before, I took some time to try it out</p>
+
+<img src="images/soldering_tests.jpg">
+<p></p>
+
+<p>Three mental notes about the process:</p>
+
+<p>- to avoid shaking hands and improve the precision of the solder drops, make sure you keep elbows well placed on the table</p>
+
+<p> - desoldering is way harder than soldering - with both desoldering wick and pump: so don't use too much solder on each pad and make sure you heat it up properly before applying the solder.</p>
+
+<p> - make sure the bit is properly cleaned before soldering the pad, this makes a huge difference. Instead of using the wet sponge that is attached to the soldering station, I chose to use a piece of paper. Just make a hole in the paper with the bit and it comes out nice and clean...</p>
+
+<img src="images/solder_cleaning.jpg">
+<p></p>
+<br>
+<p>Here's the final outcome:</p>
+
+<img src="images/final_circuit.jpg">
+<p></p>
+<br>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <!-- h4>Powerful Grid</h4>
+      <p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
+    </div>
+    
+    <div class="col-lg-6">
+      <h4>New Elements</h4>
+      <p>New panels, list groups, glyphicons and justified navigation.</p>
+      
+      <h4>Less Bloat</h4>
+      <p>The optimized CSS is in a single file. Glyphicons are now separate.</p>
+    </div> -->
+  <!-- </div>
+
+    </div>
+  
+  <hr> -->
+  
+  <!-- <div class="jumbotron text-center">
+    <h2>Moving from Bootstrap 2.x to 3.0?</h2>
+    <p class="lead">Everything has changed, so you can't just replace the 2.x with the 3.0 files. The folks at Bootply, the Bootstrap Playground have created a migration guide to help.</p>
+    <p><a class="btn btn-large btn-success" href="http://www.bootply.com/bootstrap-3-migration-guide" target="ext">Migration Guide</a></p>
+  </div> -->
+  
+ <!-- /container -->
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
